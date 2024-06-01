@@ -32,7 +32,7 @@ export default function Home() {
     return (
         <div className="container todo-wrapper">
             <div className="todo-header">
-                <h1 className>Todos App</h1>
+                <h1>Todos App</h1>
                 <button className="btn btn-primary" onClick={toggleForm}>
                     Add Todo
                 </button>

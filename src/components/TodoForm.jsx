@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 export default function TodoForm({ toggleForm, addTodo, data }) {
     const [name, setName] = useState('')
     const handleNameChange = (e) => {
-        setName(e.target.value.trim())
+        setName(e.target.value)
     }
     const onSubmit = (e) => {
         e.preventDefault()
