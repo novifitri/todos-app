@@ -1,13 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import ButtonDelete from './ButtonDelete'
+import { TodoContext } from '../context/TodoContext'
 
-export default function TodoItem({
-    id,
-    name,
-    done,
-    handleTodoDone,
-    deleteTodo,
-}) {
+export default function TodoItem({ id, name, done }) {
+    const { handleTodoDone } = useContext(TodoContext)
     return (
         <li className={`todo-item ${done && 'done'}`}>
             <div className="todo-item__info">
@@ -19,7 +15,7 @@ export default function TodoItem({
                 />
                 <h4>{name}</h4>
             </div>
-            <ButtonDelete id={id} deleteTodo={deleteTodo} />
+            <ButtonDelete id={id} />
         </li>
     )
 }

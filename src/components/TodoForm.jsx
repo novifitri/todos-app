@@ -1,15 +1,19 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
+import { TodoContext } from '../context/TodoContext'
 
-export default function TodoForm({ toggleForm, addTodo, data }) {
+export default function TodoForm() {
+    const { data, addTodo, toggleForm } = useContext(TodoContext)
     const [name, setName] = useState('')
+
     const handleNameChange = (e) => {
-        setName(e.target.value.trim())
+        setName(e.target.value)
     }
     const onSubmit = (e) => {
         e.preventDefault()
         const todo = {
             id: data.length + 1,
             name,
+            done: false,
         }
         addTodo(todo)
         setName('')
