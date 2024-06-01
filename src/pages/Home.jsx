@@ -5,7 +5,7 @@ import { TodoContext } from '../context/TodoContext'
 
 export default function Home() {
     const state = useContext(TodoContext)
-    const { data, setData, showForm, toggleForm } = state
+    const { data, showForm, toggleForm } = state
 
     return (
         <div className="container todo-wrapper">
